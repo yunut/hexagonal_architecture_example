@@ -28,6 +28,21 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("com.mysql:mysql-connector-j")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // for json(need for kotlin data class parsing)
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-serialization:1.6.21")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+    implementation("jakarta.json:jakarta.json-api:2.0.1")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8")
+
+    // kotest
+    testImplementation("io.kotest:kotest-assertions-core-jvm:5.5.5")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:5.5.5")
+    testImplementation("io.mockk:mockk:1.13.3")
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
+    testImplementation("com.appmattus.fixture:fixture-kotest:1.2.0")
 }
 
 tasks.withType<KotlinCompile> {
